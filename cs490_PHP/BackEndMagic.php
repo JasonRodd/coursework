@@ -63,7 +63,7 @@ include 'DeleteMultipliers.php';
 include 'SelectMultipliers.php';
 
 
-$myDB = new Database("sql2.njit.edu","jjr42","laureate6","jjr42");
+$myDB = new Database("sql*.njit.edu","jjr123","rararasputin","jjr123");
 $connection = new mysqli($myDB->get_servername(), $myDB->get_username(), $myDB->get_password(), $myDB->get_dbname());
 
 if ($connection->connect_error) { #check valid database credentials
