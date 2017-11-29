@@ -1,0 +1,52 @@
+#!/bin/bash
+#Jason Rodd
+#9/28/16
+
+wget $1
+fileName=$(echo $1 | rev | cut -d'/' -f1 | rev)
+echo $fileName
+
+
+echo "  Student     Test1   Test2    Average"
+echo "--------------------------------------"
+
+let students=0
+let test1avg=0
+let test2avg=0
+let SUPERAVERAGE=0
+
+while read p; 
+do
+  let students=$students+1
+  name=""
+  let currentTest=1
+  let test1=0
+  let test2=0
+  let average=0 
+  for word in $p
+  do
+    if [ "$word" -eq "$word" ] 2>/dev/null
+    then #int
+      if [ $currentTest -eq 1 ]
+      then
+         let test1=$word
+         let test1avg=$test1avg+$test1
+         let currentTest=2
+      else
+         let test2=$word
+	 let test2avg=$test2avg+$test2
+      fi
+    else #str
+      name="$name $word"
+    fi
+  done
+  let average=($test1+$test2)/2
+  let SUPERAVERAGE=$SUPERAVERAGE+$average
+  echo "$name	$test1	$test2	$average"
+  
+done < $fileName
+let test1avg=$test1avg/students
+let test2avg=$test2avg/students
+let SUPERAVERAGE=$SUPERAVERAGE/$students
+
+echo "class avg	$test1avg	$test2avg	$SUPERAVERAGE"
