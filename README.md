@@ -1,5 +1,5 @@
 # coursework
-contains my njit undergraduate coursework for: <br />
+contains my NJIT undergraduate coursework for: <br />
 cs280 <br />
 cs288 <br />
 cs356 <br />
