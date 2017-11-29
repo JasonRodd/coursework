@@ -1,6 +1,6 @@
 # coursework
 contains coursework for
-cs280
-cs288
-cs435
-cs490
+__cs280
+__cs288
+__cs435
+__cs490
